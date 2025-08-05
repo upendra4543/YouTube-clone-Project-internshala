@@ -2,8 +2,11 @@
 import "../style.css"
 
 function FilterButtons() {
+         window.addEventListener("scroll", () =>{
+            document.getElementById("filter-btn").classList.toggle("filter-scrolled" , window.scrollY > 0)
+         })
   return (
-    <div className="filter-btns">
+    <div className="filter-scrolled" id="filter-btns">
         <button className="btn-1">All</button>
         <button className="btn-1">Web Development</button>
         <button className="btn-1">Javascript</button>

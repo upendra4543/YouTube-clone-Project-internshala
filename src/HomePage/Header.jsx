@@ -31,15 +31,19 @@ import { useState } from "react";
                  setIsOpen(prev => !prev); 
 
              }
+                window.addEventListener("scroll", () => {
+                document.getElementById("header").classList.toggle("scrolled", window.scrollY > 0);
+                });
+
   return (
-    <div >
+    <div className="main">
                             {/* HEADER-SECTION */}
-        <div className="header">
+        <div className="scrolled" id="header">
                 <div className="logo-section">
                         <RxHamburgerMenu className="hamberger" onClick={handleHamburger}/>  
                         <div className="youtube-icon-section">
                                 <IoLogoYoutube className="youtube-icon" />
-                                <h1 className="youtube-heading">YouTube <sup>IN</sup></h1>
+                                <h1 className="youtube-heading">YouTube<sup>IN</sup></h1>
                         </div>
                 </div>
                 <div className="search-section">
@@ -47,7 +51,6 @@ import { useState } from "react";
                         <CiSearch className="search-icon" />
                 </div>
                 <div className="btn-section">
-                    <button className="btn">LogIn</button>
                     <button className="btn">SignIn</button>
                 </div>
         </div>
