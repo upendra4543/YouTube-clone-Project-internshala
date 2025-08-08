@@ -1,10 +1,12 @@
 
 export const videoData = [
     {
-          "videoId": "video01", 
+          "videoId": "1", 
             "title": "Learn React in 30 Minutes", 
             "thumbnailUrl":"https://i.ytimg.com/vi/hQAHSlTtcmY/maxresdefault.jpg",
              "description": "A quick tutorial to get started with React.",
+             "category" :"javascript",
+             "videoUrl":"https://www.youtube.com/embed/hQAHSlTtcmY",
              "channelId": "channel01",
              "uploader": "user01", 
              "views": 15200, 
@@ -17,13 +19,15 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
+          "videoId": "2", 
             "title": "Learn React in 30 Minutes", 
             "thumbnailUrl":"https://static.skillshare.com/uploads/video/thumbnails/fe1809cd178d3a6432bffb5ae8104828/original",
              "description": "A quick tutorial to get started with React.",
+             "category" :"Web development",
+              "videoUrl":"https://www.youtube.com/embed/c_ehAS66Q_Q",
              "channelId": "channel01",
              "uploader": "user01", 
-             "views": 15200, 
+             "views": 15200,               //c_ehAS66Q_Q
              "likes": 1023,
             "dislikes": 45, 
              "uploadDate": "2024-09-20",
@@ -33,10 +37,12 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
+          "videoId": "3", 
             "title": "Learn React in 30 Minutes", 
             "thumbnailUrl":"https://i.ytimg.com/vi/c_ehAS66Q_Q/maxresdefault.jpg",
              "description": "A quick tutorial to get started with React.",
+             "category" :"data science",
+             "videoUrl":"https://www.youtube.com/embed/c_ehAS66Q_Q",
              "channelId": "channel01",
              "uploader": "user01", 
              "views": 15200, 
@@ -49,10 +55,12 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
+          "videoId": "4", 
             "title": "Learn React in 30 Minutes", 
-            "thumbnailUrl":"https://i.ytimg.com/vi/JOa41r3Fr4s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD2q0JqQq2FtVrPRdkzD0DDhMrd5w",
+            "thumbnailUrl":"https://i.ytimg.com/vi/kiduOidrIZs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDBrIEYWTOvoBYdYMMxqZM4W4gIRQ",
              "description": "A quick tutorial to get started with React.",
+             "videoUrl":"https://www.youtube.com/embed/kiduOidrIZs",
+             "category" :"music",
              "channelId": "channel01",
              "uploader": "user01", 
              "views": 15200, 
@@ -65,10 +73,30 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
+          "videoId": "5", 
             "title": "Learn React in 30 Minutes", 
-            "thumbnailUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe1fd-o3TUEb572k_EMh3FFpP95yQcEoLzMA&s",
+            "thumbnailUrl":"https://i.ytimg.com/vi/9y9UEAkB2VA/maxresdefault.jpg",
              "description": "A quick tutorial to get started with React.",
+             "category" :"podcasts",
+             "videoUrl":"https://www.youtube.com/embed/9y9UEAkB2VA",
+             "channelId": "channel01",
+             "uploader": "user01", 
+             "views": 15200, 
+             "likes": 1023,
+            "dislikes": 45, 
+             "uploadDate": "2024-09-20",
+             "comments": [ { "commentId": "comment01", 
+                             "userId":"user02",
+                              "text": "Great video! Very helpful.",
+                               "timestamp": "2024-09-21T08:30:00Z" } ]   // 
+    },
+    {
+          "videoId": "6", 
+            "title": "Learn React in 30 Minutes", 
+            "thumbnailUrl":"https://i.ytimg.com/vi/sISz8MuSgRQ/maxresdefault.jpg",
+             "description": "A quick tutorial to get started with React.",
+             "category" :"show",
+              "videoUrl":"https://www.youtube.com/embed/sISz8MuSgRQ",
              "channelId": "channel01",
              "uploader": "user01", 
              "views": 15200, 
@@ -81,7 +109,24 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
+          "videoId": "7", 
+            "title": "Learn React in 30 Minutes", 
+            "thumbnailUrl":"https://i.ytimg.com/vi/s3Wx97keQys/maxresdefault.jpg",
+             "description": "A quick tutorial to get started with React.",
+             "category" :"information technology",
+             "channelId": "channel01",
+             "uploader": "user01", 
+             "views": 15200, 
+             "likes": 1023,
+            "dislikes": 45, 
+             "uploadDate": "2024-09-20",
+             "comments": [ { "commentId": "comment01", 
+                             "userId":"user02",
+                              "text": "Great video! Very helpful.",
+                               "timestamp": "2024-09-21T08:30:00Z" } ] 
+    },
+    {
+          "videoId": "8", 
             "title": "Learn React in 30 Minutes", 
             "thumbnailUrl":"https://i.ytimg.com/vi/s3Wx97keQys/maxresdefault.jpg",
              "description": "A quick tutorial to get started with React.",
@@ -97,7 +142,7 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
+          "videoId": "9", 
             "title": "Learn React in 30 Minutes", 
             "thumbnailUrl":"https://i.ytimg.com/vi/s3Wx97keQys/maxresdefault.jpg",
              "description": "A quick tutorial to get started with React.",
@@ -113,7 +158,7 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
+          "videoId": "10", 
             "title": "Learn React in 30 Minutes", 
             "thumbnailUrl":"https://i.ytimg.com/vi/s3Wx97keQys/maxresdefault.jpg",
              "description": "A quick tutorial to get started with React.",
@@ -129,39 +174,7 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     },
     {
-          "videoId": "video01", 
-            "title": "Learn React in 30 Minutes", 
-            "thumbnailUrl":"https://i.ytimg.com/vi/s3Wx97keQys/maxresdefault.jpg",
-             "description": "A quick tutorial to get started with React.",
-             "channelId": "channel01",
-             "uploader": "user01", 
-             "views": 15200, 
-             "likes": 1023,
-            "dislikes": 45, 
-             "uploadDate": "2024-09-20",
-             "comments": [ { "commentId": "comment01", 
-                             "userId":"user02",
-                              "text": "Great video! Very helpful.",
-                               "timestamp": "2024-09-21T08:30:00Z" } ] 
-    },
-    {
-          "videoId": "video01", 
-            "title": "Learn React in 30 Minutes", 
-            "thumbnailUrl":"https://i.ytimg.com/vi/s3Wx97keQys/maxresdefault.jpg",
-             "description": "A quick tutorial to get started with React.",
-             "channelId": "channel01",
-             "uploader": "user01", 
-             "views": 15200, 
-             "likes": 1023,
-            "dislikes": 45, 
-             "uploadDate": "2024-09-20",
-             "comments": [ { "commentId": "comment01", 
-                             "userId":"user02",
-                              "text": "Great video! Very helpful.",
-                               "timestamp": "2024-09-21T08:30:00Z" } ] 
-    },
-    {
-          "videoId": "video01", 
+          "videoId": "11", 
             "title": "Learn React in 30 Minutes", 
             "thumbnailUrl":"https://i.ytimg.com/vi/s3Wx97keQys/maxresdefault.jpg",
              "description": "A quick tutorial to get started with React.",

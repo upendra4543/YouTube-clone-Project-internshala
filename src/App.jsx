@@ -1,12 +1,16 @@
+import { useState } from "react";
+import Header from "./Components/Header";
+import { Outlet } from "react-router-dom";
 
-import HomePage from "./HomePage/HomePage"
-
-function App (){
+function App() {
+  const [searchText, setSearchText] = useState("");
+     const[isOpen,setIsOpen] = useState(false)   
   return (
-    <div>
-          <HomePage/>
-    </div>
-  )
+    <>
+      <Header searchText={searchText} onSearchChange={setSearchText} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Outlet context={{ searchText,isOpen }} />
+    </>
+  );
 }
- 
+
 export default App;

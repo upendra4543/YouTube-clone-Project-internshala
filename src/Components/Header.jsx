@@ -22,11 +22,13 @@ import { IoIosSettings } from "react-icons/io";
 import { IoFlagOutline } from "react-icons/io5";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { MdOutlineFeedback } from "react-icons/md";
+import { Link } from "react-router-dom";
 import "../style.css" 
 import { useState } from "react";
 
- function Header() {
-       const[isOpen,setIsOpen] = useState(false)       
+ function Header({isOpen,setIsOpen, searchText, onSearchChange }) {
+          
+        //      const location = useLocation();
              function handleHamburger(){
                  setIsOpen(prev => !prev); 
 
@@ -41,27 +43,27 @@ import { useState } from "react";
         <div className="scrolled" id="header">
                 <div className="logo-section">
                         <RxHamburgerMenu className="hamberger" onClick={handleHamburger}/>  
-                        <div className="youtube-icon-section">
+                        <Link className="youtube-icon-section" style={{textDecoration:"none", color:"inherit"}}>
                                 <IoLogoYoutube className="youtube-icon" />
                                 <h1 className="youtube-heading">YouTube<sup>IN</sup></h1>
-                        </div>
+                        </Link>
                 </div>
                 <div className="search-section">
-                        <input type="text" placeholder="Search" className="search"/>
+                        <input  type="text"  value={searchText}  onChange={(e) => onSearchChange(e.target.value)} placeholder="Search" className="search"/>
                         <CiSearch className="search-icon" />
                 </div>
                 <div className="btn-section">
-                    <button className="btn">SignIn</button>
+                    <Link to = "/signin" className="btn">SignIn</Link>
                 </div>
         </div>
          {/* SIDEBAR WITHOUT CLICKING HAMBURGER */}
-         {isOpen ? null:(
+         
 
             <div className="sidebar">
-                    <div className="home">
+                    <Link  to = "/home" className = "home" style={{textDecoration:"none"}}>
                             <IoMdHome className="sidebar-icons" />
                             <p>Home</p>
-                    </div>
+                    </Link>
                     <div className="home">
                             <SiYoutubeshorts className="sidebar-icons" />
                             <p>Shorts</p>
@@ -79,16 +81,16 @@ import { useState } from "react";
                             <p>History</p>
                     </div>
             </div>
-         )}
+         
                    {/* HAMBURGER SIDEBAR START */}
             {isOpen ? (
 
             <div className="hamburger-sidebar">
                 <div className="home-section-sidebar">
-                        <div className="home-sidebar">
+                        <Link className="home-sidebar" style={{textDecoration:"none"}}>
                                 <IoMdHome className="sidebar-icons" />
-                                <p>Home</p>
-                        </div>
+                                <p >Home</p>
+                        </Link>
                         <div className="home-sidebar">
                                 <SiYoutubeshorts className="sidebar-icons" />
                                 <p>Shorts</p>
