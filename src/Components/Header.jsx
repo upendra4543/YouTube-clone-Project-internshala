@@ -23,11 +23,12 @@ import { IoFlagOutline } from "react-icons/io5";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { MdOutlineFeedback } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { IoArrowBack } from "react-icons/io5"
 import "../style.css" 
 import { useState } from "react";
 
  function Header({isOpen,setIsOpen, searchText, onSearchChange }) {
-          
+               const [searchOpen, setSearchOpen] = useState(false);
         //      const location = useLocation();
              function handleHamburger(){
                  setIsOpen(prev => !prev); 
@@ -41,7 +42,8 @@ import { useState } from "react";
     <div className="main">
                             {/* HEADER-SECTION */}
         <div className="scrolled" id="header">
-                <div className="logo-section">
+            {!searchOpen?  (
+                <> <div className="logo-section">
                         <RxHamburgerMenu className="hamberger" onClick={handleHamburger}/>  
                         <Link className="youtube-icon-section" style={{textDecoration:"none", color:"inherit"}}>
                                 <IoLogoYoutube className="youtube-icon" />
@@ -50,11 +52,25 @@ import { useState } from "react";
                 </div>
                 <div className="search-section">
                         <input  type="text"  value={searchText}  onChange={(e) => onSearchChange(e.target.value)} placeholder="Search" className="search"/>
-                        <CiSearch className="search-icon" />
+                        <CiSearch className="search-icon" onClick={() => setSearchOpen(true)} />
                 </div>
                 <div className="btn-section">
                     <Link to = "/signin" className="btn">SignIn</Link>
                 </div>
+             </>   
+            ):(
+                <div className="search-bar-full">
+                        <IoArrowBack className="back-icon" onClick={() => setSearchOpen(false)} />
+                        <input
+                        type="text"
+                        value={searchText}
+                        onChange={(e) => onSearchChange(e.target.value)}
+                        placeholder="Search"
+                        autoFocus
+                        className="hidden-search"
+                         />
+              </div>
+        )}
         </div>
          {/* SIDEBAR WITHOUT CLICKING HAMBURGER */}
          
