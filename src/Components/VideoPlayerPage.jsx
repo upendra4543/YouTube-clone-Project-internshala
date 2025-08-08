@@ -103,6 +103,7 @@ function VideoPlayerPage() {
             <div className="video-player-cart">
                         <iframe  className="video-1"   src={video.videoUrl }  title={video.title}  frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
                             <h1 className="video-title">{video.title}</h1>
+                            <p className="view-hidden">{video.views.toLocaleString()} views · {timeAgo}</p>
                                     <div className="user-cart">
                                             <div className="user-chennel-details">
                                                 <img   src="#" className="user-image"/>
@@ -161,7 +162,7 @@ function VideoPlayerPage() {
             </div>
             <div className="side-video-grid">
                 <h2 className="side-video-heading">Related Video</h2>
-                <VideoGrid videos={videoData.filter(v => v.videoId !== videoId)} />
+                <VideoGrid videos={videoData.filter(v => v.videoId !== videoId)}  />
             </div>
     </div>
     
