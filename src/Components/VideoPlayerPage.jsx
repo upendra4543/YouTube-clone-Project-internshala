@@ -160,10 +160,6 @@ function VideoPlayerPage() {
 
                 </div>
             </div>
-            <div className="side-video-grid">
-                <h2 className="side-video-heading">Related Video</h2>
-                <VideoGrid videos={videoData.filter(v => v.videoId !== videoId)}  />
-            </div>
     </div>
     
   );

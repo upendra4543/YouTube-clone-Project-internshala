@@ -224,7 +224,7 @@ sup{
     position: fixed;
     z-index: 1000;
      top: 7.6rem;
-    left: 3rem; 
+    left: 11rem; 
     transition: all .3s;
     overflow-x: auto;     /* Enable horizontal scroll */
     white-space: nowrap;
@@ -236,7 +236,9 @@ sup{
   left: 26rem; /* match your sidebar width */
 }
 @media(max-width:768px){
-    
+    #filter-btns{
+        left: 3rem;
+    }
 }
     
 #filter-btns.filter-scrolled {
@@ -283,7 +285,7 @@ sup{
     }
     .video-grid{
          left: 2rem; 
-         width: 150%;
+        width: 100%;
     }
     
 }
