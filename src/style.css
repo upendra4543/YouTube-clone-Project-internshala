@@ -464,6 +464,7 @@ sup{
     }
     .video-player-cart{
         width: 90%;
+        border-radius: none;
     }
    .video-1{
     border-radius: none;
