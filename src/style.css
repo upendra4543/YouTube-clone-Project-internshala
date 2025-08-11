@@ -465,7 +465,9 @@ sup{
     .video-player-cart{
         width: 90%;
     }
-
+   .video-1{
+    border: none;
+   }
 }
 @media (max-width:768px){
     .video-player-cart{
