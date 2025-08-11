@@ -190,3 +190,78 @@ export const videoData = [
                                "timestamp": "2024-09-21T08:30:00Z" } ] 
     }
 ]
+
+ export const channelData = {
+  channelId: "channel01",
+  channelName: "Code with John",
+  owner: "user01",
+  description: "Coding tutorials and tech reviews by John Doe.",
+  channelBanner: "https://pg-p.ctme.caltech.edu/wp-content/uploads/sites/4/2023/03/full_stack_web_developer_salary-1.jpg",
+  profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieKH7zB9nTU-p1lunvBstOD92J53_dv1Alg&s",
+  subscribers: "5.2k",
+  videos: [
+    {
+      id: "video01",
+      title: "React Basics Tutorial",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM4ool0_ixiIH8oGiwJ1RiuloZI1J6OWZbQQ&s",
+      views: "1.5K",
+      uploaded: "2 days ago",
+    },
+    {
+      id: "video02",
+      title: "Node.js Crash Course",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9VFCA6VSXrQpugde4bt5oOQYnSaaly8S9g&s",
+      views: "2.1K",
+      uploaded: "1 week ago",
+    },
+    {
+      id: "video03",
+      title: "JavaScript ES6 Features",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1HHJzvn-_EoPmWjVKYKlU8W2GIeb7nF1LA&s",
+      views: "3.4K",
+      uploaded: "3 weeks ago",
+    },
+    {
+      id: "video01",
+      title: "React Basics Tutorial",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM4ool0_ixiIH8oGiwJ1RiuloZI1J6OWZbQQ&s",
+      views: "1.5K",
+      uploaded: "2 days ago",
+    },
+    {
+      id: "video02",
+      title: "Node.js Crash Course",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9VFCA6VSXrQpugde4bt5oOQYnSaaly8S9g&s",
+      views: "2.1K",
+      uploaded: "1 week ago",
+    },
+    {
+      id: "video03",
+      title: "JavaScript ES6 Features",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1HHJzvn-_EoPmWjVKYKlU8W2GIeb7nF1LA&s",
+      views: "3.4K",
+      uploaded: "3 weeks ago",
+    },
+    {
+      id: "video01",
+      title: "React Basics Tutorial",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM4ool0_ixiIH8oGiwJ1RiuloZI1J6OWZbQQ&s",
+      views: "1.5K",
+      uploaded: "2 days ago",
+    },
+    {
+      id: "video02",
+      title: "Node.js Crash Course",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9VFCA6VSXrQpugde4bt5oOQYnSaaly8S9g&s",
+      views: "2.1K",
+      uploaded: "1 week ago",
+    },
+    {
+      id: "video03",
+      title: "JavaScript ES6 Features",
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1HHJzvn-_EoPmWjVKYKlU8W2GIeb7nF1LA&s",
+      views: "3.4K",
+      uploaded: "3 weeks ago",
+    },
+  ],
+};

@@ -285,7 +285,7 @@ sup{
     }
     .video-grid{
          left: 2rem; 
-        width: 100%;
+         width: 150%;
     }
     
 }
@@ -420,15 +420,23 @@ sup{
     flex-direction: column;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-     max-width:65%;
-    height: 95vh;
+    position: relative;
+    width: 70%;
+    aspect-ratio: 16 / 9; 
     margin-top:9rem ;
     margin-left: 8rem;
+   
 }
+
+
 .video-1{
-    width: 100%;
-    height: 100%;
-    border-radius: 11px;
+    
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
 }
 .user-cart{
     display: flex;
@@ -460,10 +468,24 @@ sup{
         
     }
     .video-player-cart{
-       width: 100%;
-       height: 65vh;
+        width: 90%;
     }
+
 }
+@media (max-width:768px){
+    .video-player-cart{
+        width:100%;
+        margin-left: 1rem;
+    }
+    
+}
+@media(max-width:700px){
+  .video-player-cart{
+       aspect-ratio: 16 / 9;
+  }
+}
+
+
 
 .user-image{
     width: 40px;
@@ -528,7 +550,7 @@ sup{
     border-radius: 11px;
     background-color: #E6F0FA;
     margin-left: 8rem;
-    width: 65%;
+    width: 70%;
 }
 .padding {
     display: flex;
@@ -545,14 +567,24 @@ sup{
     margin-left: 8rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    width: 65%;
+    width: 70%;
 }
 @media(max-width:820px){
     .description{
-        width: 65%;
+        width: 90%;
     }
     .comments-section{
-        width: 65%;
+        width: 90%;
+    }
+}
+@media(max-width:720px){
+    .description{
+        width: 100%;
+        margin-left: 1rem;
+    }
+    .comments-section{
+        width: 100%;
+        margin-left: 1rem;
     }
 }
 .comment-form{
@@ -621,4 +653,132 @@ sup{
     right: 1rem;
     z-index: 1000;
     background-color: #fff;
+}
+/* ***************CREATE CHANNEL PAGE*********************************** */
+.create{
+    font-size: 3rem;
+}
+.create:hover{
+    cursor: pointer;
+    content: "Create Channel";
+}
+.channel-form{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: cadetblue;
+}
+.create-form-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5);
+    width: 50%;
+    height: 70%;
+    border-radius: 11px;
+    color: #fff;
+}
+.create-input{
+    width: 60%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+}
+/* ************************CHANNEL PAGE********************************** */
+.channel-page {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 7rem;
+  left: 11rem; 
+  width: 90% ;
+  height: 90%;  
+}
+@media(max-width:820px){
+    .channel-page{
+        left: 8rem;
+    }
+    .search-icon{
+        left: -.5rem;
+    }
+}
+@media(max-width:768px){
+    .channel-page{
+        left: 2rem;
+    }
+}
+.banner img{
+    width: 90%;
+   max-height: 25rem;
+    border-radius: 14px;
+}
+
+.profile-section{
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    border-bottom: 1px solid #333;
+}
+.profile-pic{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333;
+    border-radius: 50%;
+}
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    max-width: 100%;
+}
+.desc{
+    font-size: 1.6rem;
+}
+.channel-det{
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    font-size: 1.3rem;
+}
+.subscribe-btn{
+    padding: 1rem 1.6rem;
+    background-color: #212121;
+    color: #fff;
+    border-radius: 50px;
+    max-width: 10rem;
+     cursor: pointer;
+    border: none;
+}
+.subscribe-btn:hover{
+    background-color:#696464 ;
+}
+.channel-video-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+.tabs{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.6rem;
+}
+.btn-5:hover{
+      background-color: #212121;
+      color: #fff;
+}
+.channel-video-card{
+ max-width: 40rem;
+  max-width: 40rem;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 11px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }

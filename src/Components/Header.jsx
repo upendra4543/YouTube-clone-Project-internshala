@@ -24,12 +24,12 @@ import { IoIosHelpCircleOutline } from "react-icons/io";
 import { MdOutlineFeedback } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5"
+import { MdOutlineCreateNewFolder } from "react-icons/md";
 import "../style.css" 
 import { useState } from "react";
 
  function Header({isOpen,setIsOpen, searchText, onSearchChange }) {
                const [searchOpen, setSearchOpen] = useState(false);
-        //      const location = useLocation();
              function handleHamburger(){
                  setIsOpen(prev => !prev); 
 
@@ -54,7 +54,8 @@ import { useState } from "react";
                         <input  type="text"  value={searchText}  onChange={(e) => onSearchChange(e.target.value)} placeholder="Search" className="search"/>
                         <CiSearch className="search-icon" onClick={() => setSearchOpen(true)} />
                 </div>
-                <div className="btn-section">
+                <div className="btn-section" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                    <Link to = "/create" style={{padding:"4px 8px",textDecoration:"none"}}><MdOutlineCreateNewFolder className="create" /></Link>
                     <Link to = "/signin" className="btn">SignIn</Link>
                 </div>
              </>   
