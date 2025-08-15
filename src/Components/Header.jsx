@@ -22,14 +22,58 @@ import { IoIosSettings } from "react-icons/io";
 import { IoFlagOutline } from "react-icons/io5";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { MdOutlineFeedback } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5"
 import { MdOutlineCreateNewFolder } from "react-icons/md";
 import "../style.css" 
-import { useState } from "react";
+import { useState,useEffect,useRef } from "react";
 
  function Header({isOpen,setIsOpen, searchText, onSearchChange }) {
                const [searchOpen, setSearchOpen] = useState(false);
+                const [isLoggedIn, setIsLoggedIn] = useState(false);
+                const [userName, setUserName] = useState("");
+                const [showDropdown, setShowDropdown] = useState(false);
+                const navigate = useNavigate();
+                const dropdownRef = useRef();
+
+           useEffect(() => {
+                        const checkLogin = () => {
+                        const token = localStorage.getItem("token");
+                        const name = localStorage.getItem("name");
+                        if (token && name) {
+                        setIsLoggedIn(true);
+                        setUserName(name);
+                        } else {
+                        setIsLoggedIn(false);
+                        setUserName("");
+                        }
+                        };
+
+                        checkLogin();
+
+                        // Optional: listen to storage changes (multi-tab support)
+                        window.addEventListener("storage", checkLogin);
+
+                        return () => window.removeEventListener("storage", checkLogin);
+                        }, []);
+            const handleLogout = () => {
+                        localStorage.removeItem("token");
+                        localStorage.removeItem("name");
+                        setIsLoggedIn(false);
+                        setUserName("")
+                        setShowDropdown(false);
+                        navigate("/login");
+                        };
+                        // Close dropdown on outside click
+            useEffect(() => {
+                        function handleClickOutside(event) {
+                        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                                setShowDropdown(false);
+                         }
+                        }
+                        document.addEventListener("mousedown", handleClickOutside);
+                        return () => document.removeEventListener("mousedown", handleClickOutside);
+                        }, []);
              function handleHamburger(){
                  setIsOpen(prev => !prev); 
 
@@ -37,13 +81,14 @@ import { useState } from "react";
                 window.addEventListener("scroll", () => {
                 document.getElementById("header").classList.toggle("scrolled", window.scrollY > 0);
                 });
-
+            
   return (
     <div className="main">
                             {/* HEADER-SECTION */}
         <div className="scrolled" id="header">
             {!searchOpen?  (
-                <> <div className="logo-section">
+             <> 
+              <div className="logo-section">
                         <RxHamburgerMenu className="hamberger" onClick={handleHamburger}/>  
                         <Link className="youtube-icon-section" style={{textDecoration:"none", color:"inherit"}}>
                                 <IoLogoYoutube className="youtube-icon" />
@@ -56,8 +101,24 @@ import { useState } from "react";
                 </div>
                 <div className="btn-section" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                     <Link to = "/create" style={{padding:"4px 8px",textDecoration:"none"}}><MdOutlineCreateNewFolder className="create" /></Link>
-                    <Link to = "/signin" className="btn">SignIn</Link>
-                </div>
+                        
+                        {isLoggedIn ? (
+                        <div className="avatar-wrapper">
+                                <div className="avatar" onClick={() => setShowDropdown(!showDropdown)}>
+                                        {userName.charAt(0).toUpperCase()}
+                                </div>
+
+                                {showDropdown && (
+                                <div className="dropdown">
+                                        <p className="user-name">👤 {userName}</p>
+                                        <button className="btn" onClick={handleLogout}>🚪 Logout</button>
+                                </div>
+                                )}
+                        </div>
+                                ) : (
+                                <Link to="/signin" className="btn">SignIn</Link>
+                                )}
+                </div>    
              </>   
             ):(
                 <div className="search-bar-full">

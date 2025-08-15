@@ -8,6 +8,9 @@ import VideoPlayerPage from './Components/VideoPlayerPage.jsx'
 import HomePage from './Components/HomePage.jsx'
 import CretaeChannelFrom from './Components/CretaeChannelFrom.jsx'
 import ChannelPage from './Components/ChannnelPage.jsx'
+import Error from './Components/404Error.jsx'
+
+ const isAuthenticated = () => !!localStorage.getItem("token");
 const appRout = createBrowserRouter([
     {
       path:"/",
@@ -26,13 +29,17 @@ const appRout = createBrowserRouter([
             element: <VideoPlayerPage />
         },
         {
-          path:"/channelpage",
-          element:<ChannelPage/>
-        }
+        path: "/channel/:channelId",
+        element: isAuthenticated() ? <ChannelPage /> : <Login />
+      },
+      {
+        path: "/dashboard",
+        element: <HomePage /> // or your Dashboard component
+      }
       ]
     },
     {
-      path:"/signin",
+      path:"/sign",
       element:<SignIn/>
     } ,
     {
@@ -40,9 +47,13 @@ const appRout = createBrowserRouter([
       element:<Login/>
     },
     {
-          path:"/create",
-          element:<CretaeChannelFrom/>
-        }
+    path: "/create",
+    element: isAuthenticated() ? <CretaeChannelFrom /> : <Login />
+  },
+    {
+      path: "*",
+      element: <Error />
+    },
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
